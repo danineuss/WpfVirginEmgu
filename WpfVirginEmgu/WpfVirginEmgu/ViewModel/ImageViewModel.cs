@@ -8,7 +8,10 @@ namespace WpfVirginEmgu.ViewModel
 {
     public class ImageViewModel : BaseViewModel
     {
-        #region Private Members
+        /// <summary>
+        /// Contains the file path to the original image and the two image container classes.
+        /// </summary>
+        #region Private Properties
 
         private string ImageSource { get; set; }
 
@@ -18,7 +21,10 @@ namespace WpfVirginEmgu.ViewModel
 
         #endregion
 
-        #region Public Members
+        /// <summary>
+        /// Contains the two BitmapSource images which can be bound to from the XAML.
+        /// </summary>
+        #region Public Properties
 
         public BitmapSource BgrImage { get; set; }
 
@@ -36,8 +42,14 @@ namespace WpfVirginEmgu.ViewModel
 
         #endregion
 
+        /// <summary>
+        /// Relays the private function as an ICommand to the View.
+        /// </summary>
         public ICommand LoadCommand => new RelayCommand(LoadImage, true);
 
+        /// <summary>
+        /// Creates a windows-style file dialog to find the image path and loads the two images.
+        /// </summary>
         private void LoadImage()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -46,7 +58,7 @@ namespace WpfVirginEmgu.ViewModel
                 ImageSource = openFileDialog.FileName;
 
                 _bgrColorImage.LoadImage(ImageSource);
-                _grayColorImage.Image = _bgrColorImage.ConvertToGrayscale();
+                _grayColorImage.LoadImage(ImageSource);
 
                 BgrImage = BitMapConverter.ToBitmapSource(_bgrColorImage.Image);
                 GrayImage = BitMapConverter.ToBitmapSource(_grayColorImage.Image);
