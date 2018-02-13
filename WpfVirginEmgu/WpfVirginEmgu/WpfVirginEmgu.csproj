@@ -70,7 +70,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\BitMapConverter.cs" />
-    <Compile Include="Model\ImageContainer.cs" />
+    <Compile Include="Model\GrayscaleImage.cs" />
+    <Compile Include="Model\ColorImage.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
     <Compile Include="ViewModel\ImageViewModel.cs" />

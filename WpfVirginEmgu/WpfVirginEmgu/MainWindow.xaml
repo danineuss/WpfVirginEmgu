@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="761.486">
     <Grid Margin="0,0,-8,10">
-        <Image Source="{Binding ImageSource}" Name="LeftImage" HorizontalAlignment="Left" Height="217" Margin="48,33,0,0" VerticalAlignment="Top" Width="321"/>
-        <Image Source="{Binding Image}" Name="RightImage" HorizontalAlignment="Left" Height="217" Margin="408,33,0,0" VerticalAlignment="Top" Width="321"/>
+        <Image Source="{Binding BgrImage}" Name="LeftImage" HorizontalAlignment="Left" Height="217" Margin="48,33,0,0" VerticalAlignment="Top" Width="321"/>
+        <Image Source="{Binding GrayImage}" Name="RightImage" HorizontalAlignment="Left" Height="217" Margin="408,33,0,0" VerticalAlignment="Top" Width="321"/>
         <Button Command="{Binding LoadCommand}" Content="Load Image" HorizontalAlignment="Left" Margin="48,266,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
